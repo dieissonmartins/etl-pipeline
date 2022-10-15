@@ -1,0 +1,1 @@
+pytest -s -v src/drivers/http_requester_test.py
