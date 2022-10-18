@@ -18,12 +18,3 @@ class ExtractHtml:
         ret = essential_information
 
         return ret
-
-
-# teste extracao
-http_requester = HttpRequester()
-html_collector = HtmlCollector()
-
-extract_html = ExtractHtml(http_requester, html_collector)
-res = extract_html.extract()
-print(res)

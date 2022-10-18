@@ -1,16 +1,15 @@
-# This is a sample Python script.
+from src.drivers.html_collector import HtmlCollector
+from src.drivers.http_requester import HttpRequester
+from src.stages.extract.extract_html import ExtractHtml
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+http_requester = HttpRequester()
+html_collector = HtmlCollector()
 
+# E – Extract
+extract_html = ExtractHtml(http_requester, html_collector)
+res = extract_html.extract()
+print(res)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# T – Transform
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('Dieisson')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# L – Load
