@@ -8,7 +8,6 @@ html_collector = HtmlCollector()
 # E – Extract
 extract_html = ExtractHtml(http_requester, html_collector)
 res = extract_html.extract()
-print(res)
 
 # T – Transform
 
