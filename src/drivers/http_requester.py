@@ -1,8 +1,9 @@
 from typing import Dict
+from .interfaces.http_requester import HttpRequesterInterface
 import requests
 
 
-class HttpRequester:
+class HttpRequester(HttpRequesterInterface):
     __url: str
 
     #def __int__(self) -> None:
@@ -13,7 +14,9 @@ class HttpRequester:
 
         response = requests.get(self.__url)
 
-        return {
+        ret = {
             "status_code": response.status_code,
             "html": response.text
         }
+
+        return ret
