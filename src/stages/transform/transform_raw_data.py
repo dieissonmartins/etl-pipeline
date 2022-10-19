@@ -19,14 +19,11 @@ class TransformRawData:
         transformed_information = []
 
         for data in data_content:
-            transformed_data = None
 
             link = data['link']
 
             if 'artistid=' not in link:
                 continue
-
-            names = None
 
             if ', ' in data['name']:
                 names = data['name'].split(' ')
@@ -46,7 +43,6 @@ class TransformRawData:
 
     def __transform_data(self, names: List, link: str) -> Dict:
         link_splited = link.split('artistid=')
-        aux = {}
 
         if len(names) == 2:
             aux = {
