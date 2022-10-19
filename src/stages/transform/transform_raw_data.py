@@ -6,10 +6,11 @@ from src.stages.contracts.extract_contract import ExtractContract
 class TransformRawData:
 
     def transform(self, extract_contract: ExtractContract):
-
-        ret = self.__filter_and_transform_data(extract_contract)
-
-        return ret
+        try:
+            ret = self.__filter_and_transform_data(extract_contract)
+            return ret
+        except Exception as e:
+            raise TypeError(e)
 
     def __filter_and_transform_data(self, extract_contract: ExtractContract) -> List[Dict]:
         extraction_date = extract_contract.extraction_date
